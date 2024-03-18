@@ -23,3 +23,5 @@ Route::get('/tasks/', [TaskController::class, 'index'])->name('tasks.index');
 
 // Ditambahkan
 Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+
+Route::get('/tasks/create', [Taskcontroller::class, 'create'])->name('tasks.create');
