@@ -13,8 +13,20 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+        $table->text('detail')->nullable();
+        $table->date('due_date')->default(date('Y-m-d'));
+        $table
+            ->enum('status', [
+                'not_started',
+                'in_progress',
+                'in_review',
+                'completed',
+            ])
+            ->default('not_started');
             $table->timestamps();
-        });
+    });
+
     }
 
     /**
